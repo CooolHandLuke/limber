@@ -19,16 +19,16 @@ var peer = new Peer(undefined, {
 
 
 
-const muteUnmute = () => {
-  const enabled = myVideoStream.getAudioTracks()[0].enabled;
-  if(enabled) {
-    myVideoStream.getAudioTracks()[0].enabled = false;
-    setUnmuteButton();
-  } else {
-    setMuteButton();
-    myVideoStream.getAudioTracks()[0].enabled = true;
-    }
-  };
+// const muteUnmute = () => {
+//   const enabled = myVideoStream.getAudioTracks()[0].enabled;
+//   if(enabled) {
+//     myVideoStream.getAudioTracks()[0].enabled = false;
+//     setUnmuteButton();
+//   } else {
+//     setMuteButton();
+//     myVideoStream.getAudioTracks()[0].enabled = true;
+//     }
+//   };
 
   const setMuteButton = () => {
     const html = `<i></i>
@@ -118,7 +118,7 @@ function Room() {
   
   const addVideoStream = (video, stream) => {
    
-    video.srcObject = stream;
+    myVideo.srcObject = stream;
     video.addEventListener('loadedmetadata', () => {
       video.play()
     })
